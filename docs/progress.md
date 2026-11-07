@@ -1,5 +1,19 @@
 # Session evidence — 2026-11-07
 
+## Windows collector follow-up
+
+The collector now uses Windows `PeekNamedPipe` for subprocess pipes and retains
+POSIX selectors, the byte/time budget, fixed read-only probes and privacy filtering.
+`make check` passed locally: 23 Python tests passed, the native Windows selector
+regression was skipped on Linux, and the C and DarwinBoot host checks passed.
+Windows CI now covers Server 2022/2025 with Python 3.10/3.14 and official `adb.exe`;
+check the [workflow runs](https://github.com/Trin0110/Zeus-DualBoot/actions/workflows/check.yml)
+for the current commit's result. This is host validation, not phone execution.
+Exact Windows 10/11 setup/collection commands and ACL semantics are documented in
+[diagnostics.md](diagnostics.md#windows-1011-powershell).
+
+## Original foundation session
+
 The initial empty repository now contains functional development infrastructure.
 No code was committed or pushed, and no physical device operation was performed.
 Prepared files are in the current cloud checkout; future-task restoration has not

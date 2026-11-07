@@ -26,12 +26,16 @@ GitHub Actions run has been observed or claimed in this session.
 
 ## Read-only phone diagnostics
 
-On a computer that already has authorized ADB access to the phone:
+On a computer that already has authorized ADB access to the phone (Python 3.10+):
 
 ```sh
 python3 tools/adb-diagnostics/collect.py --output zeus-diagnostics.json
 # If multiple authorized devices are present, add --serial YOUR_LOCAL_SELECTOR.
 ```
+
+Windows 10/11 users: follow the [PowerShell setup and collection commands](docs/diagnostics.md#windows-1011-powershell).
+Use official `adb.exe`; WSL and a local build toolchain are not required. CI includes
+native Windows pipe, timeout, output-limit, privacy and Platform Tools checks.
 
 The collector reads only fixed metadata probes, requires no root, bounds output
 and time, and stores sanitized structured fields instead of raw logs. It never

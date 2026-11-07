@@ -3,6 +3,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -34,43 +35,103 @@ PROBES = {
 }
 
 
+class _PipeReader:
+    """Wait for an anonymous pipe without blocking past the command deadline.
+
+    Windows selectors accept sockets, not subprocess pipes. PeekNamedPipe also
+    supports anonymous pipes and lets us read only bytes already available. The
+    stream must be unbuffered and have exactly one reader. No reader threads or
+    raw-output temporary files are needed, even if a child inherits the pipe.
+    """
+    def __init__(self, stream):
+        self.stream = stream
+        self.selector = None
+        if os.name == "nt":
+            import ctypes
+            from ctypes import wintypes
+            import msvcrt
+            self.ctypes = ctypes
+            self.available = wintypes.DWORD()
+            self.handle = wintypes.HANDLE(msvcrt.get_osfhandle(stream.fileno()))
+            self.peek = ctypes.WinDLL("kernel32", use_last_error=True).PeekNamedPipe
+            self.peek.argtypes = (wintypes.HANDLE, wintypes.LPVOID, wintypes.DWORD,
+                                  wintypes.LPVOID, ctypes.POINTER(wintypes.DWORD),
+                                  wintypes.LPVOID)
+            self.peek.restype = wintypes.BOOL
+        else:
+            self.selector = selectors.DefaultSelector()
+            try:
+                self.selector.register(stream, selectors.EVENT_READ)
+            except BaseException:
+                self.selector.close()
+                raise
+
+    def read(self, maximum, deadline):
+        while True:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                return None
+            if self.selector is not None:
+                if self.selector.select(remaining):
+                    return os.read(self.stream.fileno(), maximum)
+            else:
+                if not self.peek(self.handle, None, 0, None,
+                                 self.ctypes.byref(self.available), None):
+                    error = self.ctypes.get_last_error()
+                    if error == 109:  # ERROR_BROKEN_PIPE: all writers closed.
+                        return b""
+                    raise self.ctypes.WinError(error)
+                if self.available.value:
+                    return os.read(self.stream.fileno(), min(maximum, self.available.value))
+                time.sleep(min(.01, remaining))
+
+    def close(self):
+        if self.selector is not None:
+            self.selector.close()
+
+
 def run_bounded(argv, timeout=8, limit=LIMIT):
     """Bound memory and runtime, combining stderr only in ephemeral memory."""
+    if not math.isfinite(timeout) or timeout <= 0 or type(limit) is not int or limit < 0:
+        raise ValueError("timeout must be finite and positive; limit must be a nonnegative integer")
     try:
         proc = subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT)
+                                stderr=subprocess.STDOUT, bufsize=0, shell=False)
     except OSError:
         return "unavailable", ""
     data = bytearray()
     status = "ok"
     deadline = time.monotonic() + timeout
+    reader = None
     try:
-        with selectors.DefaultSelector() as selector:
-            selector.register(proc.stdout, selectors.EVENT_READ)
-            while True:
-                remaining = deadline - time.monotonic()
-                if remaining <= 0:
-                    status = "timeout"
-                    break
-                if not selector.select(min(remaining, .2)):
-                    continue
-                chunk = os.read(proc.stdout.fileno(), min(65536, limit + 1 - len(data)))
-                if not chunk:
-                    break
-                data.extend(chunk)
-                if len(data) > limit:
-                    status = "output_limit"
-                    break
-        if status != "ok":
-            proc.kill()
-        code = proc.wait(timeout=max(.1, deadline - time.monotonic()))
-        if status == "ok" and code:
-            status = "inaccessible"
+        reader = _PipeReader(proc.stdout)
+        while True:
+            chunk = reader.read(min(65536, limit + 1 - len(data)), deadline)
+            if chunk is None:
+                status = "timeout"
+                break
+            if not chunk:
+                break
+            data.extend(chunk)
+            if len(data) > limit:
+                status = "output_limit"
+                break
+        if status == "ok":
+            code = proc.wait(timeout=max(0, deadline - time.monotonic()))
+            if code:
+                status = "inaccessible"
     except subprocess.TimeoutExpired:
         status = "timeout"
-        proc.kill()
-        proc.wait()
+    except OSError:
+        status = "inaccessible"
     finally:
+        # Reap our local command on every exit, including interrupted reads.
+        # Closing the unbuffered pipe cannot wait on a blocked reader thread.
+        if proc.poll() is None:
+            proc.kill()
+        proc.wait()
+        if reader is not None:
+            reader.close()
         proc.stdout.close()
     text = bytes(data[:limit]).decode("utf-8", "replace")
     if status == "ok" and re.search(r"permission denied|not permitted|not found|no such file", text, re.I):
@@ -176,8 +237,10 @@ def main(argv=None):
     try:
         result = collect(args.adb, args.serial)
         # Exclusive creation protects previous reports. Only sanitized structure is serialized.
-        with args.output.open("x", encoding="utf-8") as stream:
-            os.chmod(args.output, 0o600)
+        # POSIX gets owner-only permissions at creation. Windows uses inherited
+        # directory ACLs; chmod(0600) does not establish a private Windows ACL.
+        fd = os.open(args.output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as stream:
             json.dump(result, stream, indent=2)
             stream.write("\n")
     except (ValueError, OSError) as exc:
