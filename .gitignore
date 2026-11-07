@@ -1,0 +1,35 @@
+build/
+__pycache__/
+*.pyc
+.venv/
+reports/
+.tools/
+
+# Local credentials and private diagnostic reports
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+/zeus-diagnostics*.json
+/diagnostics*.json
+
+# Generated binaries, firmware and dependency packages
+*.o
+*.a
+*.so
+*.efi
+*.fd
+*.bin
+*.img
+*.ipsw
+*.im4p
+*.im4m
+*.dmg
+*.dtb
+*.dtbo
+*.deb

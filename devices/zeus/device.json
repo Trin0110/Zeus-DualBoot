@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "target": {"manufacturer": "Xiaomi", "model": "12 Pro", "codename": "zeus", "soc": "SM8450", "architecture": "aarch64", "identity_source": "user_report"},
+  "policy": {"default_os": "android", "allow_device_writes": false, "allow_reboot": false, "preserve_userdata": true},
+  "observed": {
+    "device_identity": null, "android_version": null, "firmware_build": null,
+    "bootloader_unlocked": null, "boot_image_version": null, "temporary_boot_supported": null,
+    "partition_layout": null, "memory_map": null, "reserved_memory": null,
+    "gic": null, "timer_frequency": null, "uefi_handoff": null,
+    "panel_controller": null, "touch_controller": null, "framebuffer": null,
+    "ufs": null, "recovery_method": null
+  },
+  "user_report": {"storage_gb": 256, "display": "aftermarket LCD", "android_display_working": true, "android_touch_working": true},
+  "evidence": []
+}

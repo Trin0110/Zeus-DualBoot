@@ -1,0 +1,10 @@
+{
+  "command": "python3 tools/adb-diagnostics/collect.py --adb /workspace/.zeus-tools/bin/adb --output /tmp/zeus-negative-collector.json",
+  "expected_exit": 1,
+  "actual_exit": 1,
+  "output": {
+    "status": "FAILED",
+    "reason": "Exactly one authorized Android device required; use --serial when multiple are connected"
+  },
+  "report_created": false
+}

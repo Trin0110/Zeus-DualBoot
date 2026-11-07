@@ -1,0 +1,15 @@
+{
+  "linux-sm8450-v6.12.dtsi": {
+    "sha256": "c3c3d897c55aa581045dcee4d5e65eae662e37826434ac63162598051197166a",
+    "size": 143977
+  },
+  "xiaomi-zeus-Makefile": {
+    "sha256": "65e95967bba8f1108dbae7aeb558ae7152e0fd1687fcdec357f3d5e21d341f03",
+    "size": 68994
+  },
+  "xiaomi_zeus_branch": {
+    "repository": "MiCode/Xiaomi_Kernel_OpenSource",
+    "branch": "zeus-s-oss",
+    "commit": "7d10d738b2c4299f3b8549c61a01ece39f19c788"
+  }
+}

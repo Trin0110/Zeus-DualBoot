@@ -1,0 +1,13 @@
+{
+  "compiler": "GCC 14.2.0; Clang/LLD 19.1.7",
+  "python": "3.12.14",
+  "status": "BUILD_VERIFIED",
+  "hardware_executed": false,
+  "artifacts": {
+    "build/libzeus-host.a": "1117fc04dad2d0d795c99ef664b1002d367cb856df5f4eac7c0213204227b56e",
+    "build/aarch64/display.o": "3e085406d1042c032d08a5bd92abd8cdf05d14ba6c68779fefa32b7f5e759dd7",
+    "build/aarch64/touch.o": "f7331f5fb85f368af921fb2b1678373c3a61a3e9e226138c16434de84e2449ec",
+    "build/aarch64/platform.o": "6ef0075a43db7144aea83475acb8e019cb2b53d44f92286b779b481c2206a55c",
+    "build/aarch64/storage.o": "ac04a3dedbf06315efa5f3a85fcc5d95906ec11710b22573d0e7c88463eec9c0"
+  }
+}

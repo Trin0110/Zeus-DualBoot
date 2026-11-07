@@ -1,0 +1,58 @@
+[
+  {
+    "query_file": "github-search-0.html",
+    "result_count": 4,
+    "results": [
+      {
+        "name": "akshaynexus/iOSPlus10",
+        "description": "iOS (16 -&gt; 26) natively on OnePlus 10 Pro (SM8450) via Mu UEFI + UniXNU/DarwinBoot + XNU"
+      },
+      {
+        "name": "obaosp/UniXNU-sm8450-common",
+        "description": "Shared Qualcomm SM8450 platform support for UniXNU"
+      },
+      {
+        "name": "obaosp/UniXNU-cupid",
+        "description": "iOS 27 (arm64e) on Xiaomi 12 (cupid, SM8450), iPhone17,2 identity"
+      },
+      {
+        "name": "v1-727/UniXNU-sm8450-common",
+        "description": ""
+      }
+    ],
+    "excluded_unrelated_count": 0
+  },
+  {
+    "query_file": "github-search-1.html",
+    "result_count": 0,
+    "results": [],
+    "excluded_unrelated_count": 0
+  },
+  {
+    "query_file": "github-search-2.html",
+    "result_count": 9,
+    "results": [],
+    "excluded_unrelated_count": 9
+  },
+  {
+    "query_file": "github-search-3.html",
+    "result_count": 0,
+    "results": [],
+    "excluded_unrelated_count": 0
+  },
+  {
+    "query_file": "github-search-4.html",
+    "result_count": 2,
+    "results": [
+      {
+        "name": "akshaynexus/iOSPlus10",
+        "description": "iOS (16 -&gt; 26) natively on OnePlus 10 Pro (SM8450) via Mu UEFI + UniXNU/DarwinBoot + XNU"
+      },
+      {
+        "name": "HacksYT23-2/WoA-On-Moto-Edge-2022-UW",
+        "description": "Windows 11 (WoA) porting guide for the Moto Edge+ 2022 UW (XT2201-4 / hiphi) — SM8450 EDK2 UEFI bring-up, partitioning, ARM64 deployment,…"
+      }
+    ],
+    "excluded_unrelated_count": 0
+  }
+]

@@ -1,0 +1,305 @@
+[
+  {
+    "repository": "Blaze414/postmarketOS-zeus",
+    "commit": "7acfc074ff59a9be4e08ac44a63d2aa11c9a3529",
+    "available_history_count": 20,
+    "shallow": "true",
+    "recent_history": [
+      "7acfc074ff59a9be4e08ac44a63d2aa11c9a3529 Initial commit and workings",
+      "ab6b9410c5c511d7800ea32241994787b6ef139b chore: keep local tooling state out of the repo",
+      "9194e36fb31cae2c75fad1af2922a58342d4b0f8 docs: README for the port as it now stands",
+      "99d2e0368ade6ac097e52912b51a0216800e7b00 docs: install verified end to end on hardware",
+      "d12615e24ea46fc3acbe7b24f7e538d4d919838f Make the images installable by someone other than us"
+    ],
+    "license_paths": [],
+    "source_file_count": 53,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "HeliumStudio-Dev/ios-raphael",
+    "commit": "7ea2431bcc0ae2a5d79a31e1c2fea7de9be52cea",
+    "available_history_count": 20,
+    "shallow": "true",
+    "recent_history": [
+      "7ea2431bcc0ae2a5d79a31e1c2fea7de9be52cea Record verified 0091 CI image and temporary boot",
+      "4cd2978a69a133926069a936fd8d1decb4e3664c Document verified raphael ARC inputs and incompatible generic A640 bandwidth table",
+      "81be0b6c382460cc4b34e9c1bdab1b0413223ebe Record 0091 fault quirk CI and combined test handoff",
+      "105aee138da62731890d91a452a11f1fca1716fc Fix A640 SMMU fault mask and Qualcomm stream quarantine",
+      "8cc32330447bb4b1110ece9aba6f90d9c7339cb8 Record A640 firmware load and context success with route rollback failure"
+    ],
+    "license_paths": [],
+    "source_file_count": 128,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "PixOS-Project/pixelios-kernel",
+    "commit": "04457e5ddae2164778bd5e75c352a34dac916de9",
+    "available_history_count": 77,
+    "shallow": "true",
+    "recent_history": [
+      "04457e5ddae2164778bd5e75c352a34dac916de9 Merge wip/gpu-accel: GPU path (0118-0120 probes, 0140-0144 diagnostics), validate-repo reserved numbers, phone-postmortem, TP-031/032",
+      "888fdbb3501b74d6cd2f320604bef7aa2e8defbe Merge trunk into wip/gpu-accel",
+      "f389c8cc0bf266dc9f550c07697aa625b20c8c64 TOOL-PROPOSALS: TP-033 tools/artifacts-prune",
+      "1c1979fc5809f6968aa52999493a82199381cc38 Merge tools/phone-lock-test-env: test_phone_lock drops inherited PHONE_LOCK_* vars",
+      "c30f80e7d9686ffc3f2267a68559542401ed1e29 test_phone_lock: drop inherited PHONE_LOCK_* from base env"
+    ],
+    "license_paths": [
+      "LICENSE",
+      "LICENSES/APSL-2.0.txt",
+      "LICENSES/Apache-2.0.txt",
+      "LICENSES/ISC-bwfm.txt",
+      "LICENSES/MIT-AOSP-avbtool.txt",
+      "LICENSES/MIT-BearSSL.txt",
+      "LICENSES/MIT-ios-sweet.txt",
+      "LICENSES/MIT-qrcodegen.txt",
+      "LICENSES/MIT.txt",
+      "LICENSES/Spleen-BSD-2-Clause.txt",
+      "docs/tool-proposals/TP-030-license-check.md",
+      "tools/check_rules/r30_license.py",
+      "tools/license-map.txt"
+    ],
+    "source_file_count": 363,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "UniXNU/DarwinBoot",
+    "commit": "3c75734014cdab0acd9541e88057b7606ee7ae08",
+    "available_history_count": 1,
+    "shallow": "true",
+    "recent_history": [
+      "3c75734014cdab0acd9541e88057b7606ee7ae08 feat(boot): accept arm64e MH_EXECUTE kernels and a separate root policy sidecar"
+    ],
+    "license_paths": [
+      "LICENSE"
+    ],
+    "source_file_count": 14,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "UniXNU/UniXNU",
+    "commit": "b6de3eb11f0b0118dfc14fad6eefc884a3b69737",
+    "available_history_count": 8,
+    "shallow": "true",
+    "recent_history": [
+      "b6de3eb11f0b0118dfc14fad6eefc884a3b69737 fix(metal): pin AdrenoMetal to its main revision",
+      "73b35d24d212e291ed23b0dc9c4311eb751e7744 docs: describe the sheng-metal-flow switch",
+      "8d96e320996cdf33aa739ad8bf336cff0459a268 build(metal): pin AdrenoMetal with the optional metal2vulkan paths off",
+      "ff6deb40e843f170cbf40528de56feda1b8d731c docs: describe AdrenoMetal pipeline records and work placement",
+      "642c4fef77c28c5f9f32a3eb862fe8bea9ed0339 build(metal): pin metal2vulkan 963f0e64"
+    ],
+    "license_paths": [
+      "LICENSE",
+      "package/LICENSE",
+      "package/UniXNUPkg/Driver/UniXNURamDiskDxe/LICENSE",
+      "scripts/appsync/LICENSE"
+    ],
+    "source_file_count": 493,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "akshaynexus/iOSPlus10",
+    "commit": "146e889430bab755329dde7104cc0fa002f44bfb",
+    "available_history_count": 15,
+    "shallow": "true",
+    "recent_history": [
+      "146e889430bab755329dde7104cc0fa002f44bfb Merge pull request #1 from akshaynexus/ios26-prep",
+      "167f7d8edb5089ab5cf0daa7ffa83bdf29916f60 submodules: update Mu-Silicium-negroni to 4b524aba (7 GiB Kernel RAM)",
+      "9340837422f289148237b8f23d80c947a478b477 docs: pause OnePlus 10 Pro development and shift focus to OnePlus 15",
+      "1e3c02c480fb5f166711aafcb4b5708ef7bda53e gpu-comparison: speed comparison (sheng/pong use the same NativeMetal\u2192metal2vulkan\u2192Turnip chain, AirNir is offline only; measured fps of sheng/flame/HackiOS/Chlorophyll/spes vs ours) and ranked per-frame CPU fixes",
+      "a2983e9b3d1a6f7e4b5c236e0fab1b9041adb845 RAM: XNU 7 GiB (was 3) + GPU pool 1.5 GiB (was 512 MiB) in the 9 GiB bank. 0401: boot self-check of the ADT window vs negroni-ram-bank/reserved and the pool, fallback 3 GiB with one 'NEGRONI RAM: off:' line, kill switch negroniram=0; Mu 0002 Kernel RAM 0x841000000+0x1DF000000 (0001 is in the submodule already); config --dram 840000000:1C0000000, [ram] section, negronigpu_pool=1536 at negronigpu_poolbase=0xa20000000 for every image; adt-extra reads the Mu FD, --check-ram; ios16-safe keeps 3 GiB (XNU_RAM=0). 0402 GPU memory: per-client/total counters (RAM/pool/host), WIRED lines name the top GPU clients, pool bounded to the bank end, first-fit fix (the ~1 GiB IOKit wired was metal2vulkan 8 MiB blocks overflowing the 512 MiB pool). Opus reviews ACCEPT after fixes"
+    ],
+    "license_paths": [
+      "LICENSE",
+      "LICENSES/GPL-2.0.txt",
+      "LICENSES/GPL-3.0.txt",
+      "userland/camera/LICENSE.HakiOS",
+      "userland/metal/probes/LICENSE.Chlorophyll"
+    ],
+    "source_file_count": 316,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "bangprovn/ios-fuxi",
+    "commit": "27f6a31c8b27c6f9127f9cf27092968422579ccf",
+    "available_history_count": 20,
+    "shallow": "true",
+    "recent_history": [
+      "27f6a31c8b27c6f9127f9cf27092968422579ccf ios27 K5: fuxi_proc_log prints pid 1's user stack (unslid against the shared cache) when a signal kills it",
+      "d43b7612020c63105426d88d85f76c67fdd7fdec ios27 K5: fuxi_proc_log shows pid 1's posix_spawn results and system calls the kernel lacks",
+      "f010c4005370dd8cac22278800ee18e66e01ef75 ios27 K5: fuxi_launchd_ramdisk=1 shows rd=md0 in kern.bootargs so launchd skips a real device's boot tasks",
+      "6fa62c4e26ea2de266cf191355e24932b976ef75 ios27 K5: native PAC default jop pid is nonzero so the shared region signs the cache's auth pointers",
+      "cc62f6598360d64c8f01f955f5f4255c29bcf168 ios27 K5: a user PAC failure also logs the slot's words and the shared cache slide and base"
+    ],
+    "license_paths": [
+      "shim/fuxi-probe/LICENSE.AdrenoFirmware",
+      "tools/fuxi-metal/LICENSE.NativeMetal",
+      "tools/fuxi-thermald/LICENSE.HackiOS",
+      "tools/xnuprelink/LICENSE",
+      "xnu/fuxi-adreno/LICENSE.ArmCpu",
+      "xnu/fuxi-adreno/LICENSE.GopFramebuffer",
+      "xnu/fuxi-adreno/LICENSE.NativeAdreno",
+      "xnu/fuxi-adreno/LICENSE.NativeMetal",
+      "xnu/fuxi-adreno/LICENSE.ShengUfs",
+      "xnu/fuxi-adreno/LICENSE.UniXNU-sheng",
+      "xnu/fuxi-h1/LICENSE.NativeHidInput",
+      "xnu/fuxi-unixnu/LICENSE.NativeMobileDisplay",
+      "xnu/fuxi-unixnu/LICENSE.NativeUfs",
+      "xnu/fuxi-unixnu/LICENSE.UniXNU",
+      "xnu/fuxi-wifi-ios/LICENSE.HackiOS",
+      "xnu27/components/ArmCpu/LICENSE",
+      "xnu27/components/ArmDTPlatform/LICENSE"
+    ],
+    "source_file_count": 578,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "dipa-studio/ios-sweet",
+    "commit": "45263bee51df4a0f55cdf9c649af886399488ddb",
+    "available_history_count": 11,
+    "shallow": "true",
+    "recent_history": [
+      "45263bee51df4a0f55cdf9c649af886399488ddb update website",
+      "067c9b3d463ecfbe37520683637ea2e6af31f3a4 Add MIT License to the project",
+      "425b25102b6a9ee4b68fb2b9ca5d6a086b8a4116 Merge pull request #6 from 2010475745xie/adt-panic-region",
+      "1664d638df6db00dadd51a6f61fe8e8180cd0937 mkadt: emit a panic log region (/pram + embedded-panic-log-size)",
+      "4c7cc91ea672b3ec539ad1d45f5c96784aa43f25 site: docs website for hackiosx.dev"
+    ],
+    "license_paths": [
+      "LICENSE"
+    ],
+    "source_file_count": 112,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "everettjf/pixel6ios",
+    "commit": "a461b34d16f97e721a9685e62d6ade000198187b",
+    "available_history_count": 20,
+    "shallow": "true",
+    "recent_history": [
+      "a461b34d16f97e721a9685e62d6ade000198187b Document Pixel 6 performance and networking research directions",
+      "84a5d166b64980dba1eb655396adb565146e3032 Archive Pixel 6 root-volume research sources and cleanup state",
+      "29d1007a0b2c17cfe83d031d221bb10e965da45a Explain motivation and stopping point for Pixel 6 iOS research",
+      "3971cd8815e20ec8d3e453a865749ca0ba2600e2 Show physical-device milestone photos in README",
+      "ef110d9ef8875792cdfde3bcb1007716223bc06f Document Pixel 6 iOS research milestone and pause"
+    ],
+    "license_paths": [
+      "research/pixelios-kernel/LICENSE",
+      "research/pixelios-kernel/xnu/patches/LICENSE-APSL-2.0.txt",
+      "tools/archive/rootfs/LICENSE"
+    ],
+    "source_file_count": 482,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "oosexgang/hakios-xnu-kernel",
+    "commit": "63fc2b4633bac3af8e57dadab9f5a8d4cb940438",
+    "available_history_count": 10,
+    "shallow": "true",
+    "recent_history": [
+      "63fc2b4633bac3af8e57dadab9f5a8d4cb940438 Merge pull request #53 from dlz3388461878-cmd/fix/soc-args-register-cells",
+      "d4bf65886a1683b72bbab2d8a3c5a4cdd39a37d1 Merge pull request #54 from dlz3388461878-cmd/fix/var-store-valid-slot",
+      "04aad08c8e2f86ee97599490cd0b740b55715274 var-store: fall back to an older checksum-valid archive",
+      "2423430572f8e9e41d33de16917840678c3632dd soc-args: decode register addresses with parent cell widths",
+      "2631f5d7d4f9d7322aca60991b34ba465dec343b Docs: why the shaders were wrong, the fingers' numbers, the day's changelog"
+    ],
+    "license_paths": [
+      "LICENSE",
+      "LICENSE.APSL",
+      "THIRD_PARTY_LICENSES.md",
+      "hakios-metal/LICENSE"
+    ],
+    "source_file_count": 378,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "pawlickerr/UniXNU-negroni",
+    "commit": "f812002ae3e6b861d23007efdfd9f1c394934ba9",
+    "available_history_count": 6,
+    "shallow": "false",
+    "recent_history": [
+      "f812002ae3e6b861d23007efdfd9f1c394934ba9 adapt: link the negroni Mu-Silicium repository",
+      "ea17dccd2bf2542dab75c14630415a9f5039befd adapt: README notes the userland boots without GPU acceleration, links the negroni Mu-Silicium, credits",
+      "e3a32581b666cbdc9e32be619de64992a2343006 adapt: add the xnu kernel patches; README: flashing the root to userdata",
+      "cadbdbdcdcf98f7f901c1e17d0e780dfd0aec0a1 adapt: README describes booting the ios-sweet iOS 16 kernel and userland on negroni",
+      "4ac6e2a885c90955e903d9f6628753dc38bd521c adapt: drop the log pull and the recovery flashing; fastboot flash only"
+    ],
+    "license_paths": [],
+    "source_file_count": 122,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "ry-diffusion/Bergamota",
+    "commit": "37a7a7a917fc09945ed2f7d1ae68b84d4525b4cb",
+    "available_history_count": 53,
+    "shallow": "true",
+    "recent_history": [
+      "37a7a7a917fc09945ed2f7d1ae68b84d4525b4cb Merge claude/chlorophyll-turnip-c432e2: freedreno-sweet syncobjs, prime fds and Turnip support; Chlorophyll on Turnip notes",
+      "af5eb129c52b0c5855d844b948c26b21f6166895 Merge claude/peaceful-saha-28595a: kernel fallback emulation of non-HINT PAC instructions (xnu-12377 1019, tools/pacemu)",
+      "b66f99d3a3fe99fdd42cb9c3e04137e9977f0bc0 NOTES: CI xnu 26.5 run 40412147688 with 1019: success, kernel ee1b98a1",
+      "f4b36c1c7b0955e2ddb72bdc9d69d23fa4449900 MILESTONE boot 54: WPA2-PSK join from Settings in 251 ms, DHCP + internet over the WCN3990; xnu-12377 1130: kev cluster events + 460-byte ASSOC_DONE for wifid's async join; boot 55 image",
+      "5913393dc4c0cd2f41319e749b3d4840d9542ce4 NOTES: boots 52-53 on chl: SpringBoard icon-path SMMU faults (sysmem rules out GMEM), wrapped-surface fix untested, launchd critical-crash reboot from my layout double free"
+    ],
+    "license_paths": [
+      "tools/berga-tools/LICENSES/Mesa-MIT.txt",
+      "tools/berga-tools/LICENSES/NOTICE.txt",
+      "tools/berga-tools/LICENSES/dash-COPYING.txt",
+      "tools/berga-tools/LICENSES/dropbear-LICENSE.txt",
+      "tools/berga-tools/LICENSES/libdrm-MIT.txt",
+      "tools/berga-tools/LICENSES/toybox-LICENSE.txt"
+    ],
+    "source_file_count": 800,
+    "hardware_verification": "UNVERIFIED: no independent zeus hardware validation",
+    "note": "Existence/history from Git. Source quality and scoped classifications are in docs/upstream-audit.md."
+  },
+  {
+    "repository": "obaosp/UniXNU-sm8450-common",
+    "commit": "156e46092b0afa00f5d3d8e4ebdb0b6a5a09a796",
+    "available_history_count": 1,
+    "shallow": "true",
+    "recent_history": [
+      "156e46092b0afa00f5d3d8e4ebdb0b6a5a09a796 feat(soc): add the board PMGR hook the shared OS series requires"
+    ],
+    "license_paths": [
+      "LICENSE"
+    ],
+    "classification": "SOURCE_IMPLEMENTED; hardware UNVERIFIED",
+    "note": "Source audit in docs/upstream-audit.md; no hardware testing."
+  },
+  {
+    "repository": "obaosp/UniXNU-cupid",
+    "commit": "b83e634bd63489b7c7ff3f976ca732ea80c98c03",
+    "available_history_count": 1,
+    "shallow": "true",
+    "recent_history": [
+      "b83e634bd63489b7c7ff3f976ca732ea80c98c03 record: host-verify payload.img and boot.img"
+    ],
+    "license_paths": [],
+    "classification": "SOURCE_IMPLEMENTED; hardware UNVERIFIED",
+    "note": "Source audit in docs/upstream-audit.md; no hardware testing."
+  },
+  {
+    "repository": "v1-727/UniXNU-sm8450-common",
+    "commit": "89f3a5df982e06305044613566423c3cfe615f1b",
+    "available_history_count": 1,
+    "shallow": "true",
+    "recent_history": [
+      "89f3a5df982e06305044613566423c3cfe615f1b feat(kits): add Sm8450Platform, the Adreno 730 GMU kit"
+    ],
+    "license_paths": [
+      "LICENSE"
+    ],
+    "classification": "SOURCE_IMPLEMENTED; hardware UNVERIFIED",
+    "note": "Source audit in docs/upstream-audit.md; no hardware testing."
+  }
+]

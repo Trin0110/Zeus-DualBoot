@@ -1,0 +1,39 @@
+[
+  {
+    "name": "gitee",
+    "url": "https://search.gitee.com/?q=%E9%AA%81%E9%BE%998%20Gen1%20XNU",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "gitcode",
+    "url": "https://gitcode.com/search?keyword=SM8450%20iOS%20%E7%A7%BB%E6%A4%8D",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "bilibili",
+    "url": "https://search.bilibili.com/all?keyword=%E5%B0%8F%E7%B1%B312%20Pro%20%E7%A7%BB%E6%A4%8DiOS",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "coolapk",
+    "url": "https://www.coolapk.com/",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "xda",
+    "url": "https://xdaforums.com/search/?q=Xiaomi%2012%20Pro%20XNU",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "unixnu",
+    "url": "https://unixnu.com/devices/",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "name": "github-search",
+    "url": "https://github.com/search?q=SM8450%20XNU&type=repositories",
+    "status": 200,
+    "bytes": 176255,
+    "final_url": "https://github.com/search?q=SM8450%20XNU&type=repositories"
+  }
+]

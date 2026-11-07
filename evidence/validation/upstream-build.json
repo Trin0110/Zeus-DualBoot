@@ -1,0 +1,9 @@
+{
+  "artifact": "build/upstream/HakiOS/xnuloader/loader.efi",
+  "bytes": 66048,
+  "sha256": "75fe9d47c56f88d0af91ebd780c08d85dcd785bd3cee7e6c2fc6956d6c1b1846",
+  "status": "BUILD_VERIFIED",
+  "executed": false,
+  "zeus_compatible": "UNKNOWN",
+  "warning": "Research loader contains board-specific addresses and storage writes. Not a zeus boot image."
+}

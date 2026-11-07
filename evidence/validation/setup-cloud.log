@@ -1,0 +1,99 @@
+Python 3.12.14
+cc (Debian 14.2.0-19) 14.2.0
+GNU Make 4.4.1
+Hit:1 https://deb.debian.org/debian trixie InRelease
+rm: cannot remove '/var/cache/apt/archives/partial/*.deb': Permission denied
+Reading package lists...
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)
+Debian clang version 19.1.7 (3+b1)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /workspace/.zeus-tools/root/usr/lib/llvm-19/bin
+Debian LLD 19.1.7
+Android Debug Bridge version 1.0.41
+Version 34.0.5-debian
+Installed as /workspace/.zeus-tools/root/usr/lib/android-sdk/platform-tools/adb
+Running on Linux 6.18.57 (x86_64)
+cc -std=c11 -O1 -g -Wall -Wextra -Werror -I. -c drivers/display/display.c -o build/display.o
+cc -std=c11 -O1 -g -Wall -Wextra -Werror -I. -c drivers/touch/touch.c -o build/touch.o
+cc -std=c11 -O1 -g -Wall -Wextra -Werror -I. -c platform/sm8450/platform.c -o build/platform.o
+cc -std=c11 -O1 -g -Wall -Wextra -Werror -I. -c drivers/storage/storage.c -o build/storage.o
+ar rcs build/libzeus-host.a build/display.o build/touch.o build/platform.o build/storage.o
+cc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -I. drivers/display/display.c drivers/touch/touch.c drivers/storage/storage.c platform/sm8450/platform.c tests/test_platform.c -o build/test-platform
+./build/test-platform
+PASS: framebuffer bounds/color/padding, unsupported callbacks, touch state/ranges, memory exclusions, read-only storage bounds
+python3 -m unittest discover -s tests -v
+test_evidence_cannot_enable_execution (test_boot.ConfigTests.test_evidence_cannot_enable_execution) ... ok
+test_invalid_types (test_boot.ConfigTests.test_invalid_types) ... ok
+test_invented_hardware_and_wrong_board (test_boot.ConfigTests.test_invented_hardware_and_wrong_board) ... ok
+test_policy_changes_rejected (test_boot.ConfigTests.test_policy_changes_rejected) ... ok
+test_research_config_is_valid_but_blocked (test_boot.ConfigTests.test_research_config_is_valid_but_blocked) ... ok
+test_truncated_or_invalid (test_boot.ImageTests.test_truncated_or_invalid) ... ok
+test_v3_sections (test_boot.ImageTests.test_v3_sections) ... ok
+test_v4_signature (test_boot.ImageTests.test_v4_signature) ... ok
+test_empty_and_malformed_metadata (test_diagnostics.DiagnosticsTests.test_empty_and_malformed_metadata) ... ok
+test_output_limit_timeout_and_exit_status (test_diagnostics.DiagnosticsTests.test_output_limit_timeout_and_exit_status) ... ok
+test_redaction (test_diagnostics.DiagnosticsTests.test_redaction) ... ok
+test_safe_commands_and_private_output (test_diagnostics.DiagnosticsTests.test_safe_commands_and_private_output) ... ok
+test_selection (test_diagnostics.DiagnosticsTests.test_selection) ... ok
+test_serial_is_never_shell_interpolated (test_diagnostics.DiagnosticsTests.test_serial_is_never_shell_interpolated) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.086s
+
+OK
+python3 -m boot.config devices/zeus/device.json
+{
+  "status": "VALID_RESEARCH_CONFIG",
+  "errors": [],
+  "hardware_status": "BLOCKED",
+  "blockers": [
+    "UNKNOWN: android_version",
+    "UNKNOWN: boot_image_version",
+    "UNKNOWN: bootloader_unlocked",
+    "UNKNOWN: device_identity",
+    "UNKNOWN: firmware_build",
+    "UNKNOWN: framebuffer",
+    "UNKNOWN: gic",
+    "UNKNOWN: memory_map",
+    "UNKNOWN: panel_controller",
+    "UNKNOWN: partition_layout",
+    "UNKNOWN: recovery_method",
+    "UNKNOWN: reserved_memory",
+    "UNKNOWN: temporary_boot_supported",
+    "UNKNOWN: timer_frequency",
+    "UNKNOWN: touch_controller",
+    "UNKNOWN: uefi_handoff",
+    "UNKNOWN: ufs",
+    "No validated zeus boot backend; evidence review and explicit device-test approval required"
+  ]
+}
+bash scripts/verify-vendored.sh
+PASS: pinned DarwinBoot source integrity
+PASS: arm64/arm64e capability bits, malformed ranges, fileset membership and entry
+PASS: actual C parser/copy, sparse round-trip, 1 TiB boundary, 13 refusal cases
+PASS: DarwinBoot window size boundaries
+bash scripts/cross-check.sh
+build/aarch64/display.o:  ELF 64-bit LSB relocatable, ARM aarch64, version 1 (SYSV), not stripped
+build/aarch64/platform.o: ELF 64-bit LSB relocatable, ARM aarch64, version 1 (SYSV), not stripped
+build/aarch64/storage.o:  ELF 64-bit LSB relocatable, ARM aarch64, version 1 (SYSV), not stripped
+build/aarch64/touch.o:    ELF 64-bit LSB relocatable, ARM aarch64, version 1 (SYSV), not stripped
+bash scripts/verify-upstreams.sh
+PASS: arm64/arm64e capability bits, malformed ranges, fileset membership and entry
+PASS: actual C parser/copy, sparse round-trip, 1 TiB boundary, 13 refusal cases
+make[1]: Entering directory '/workspace/Zeus-DualBoot/build/upstream/HakiOS'
+PLACEHOLDER=1 xnuloader/mkidentity.sh
+mkidentity.sh: xnuloader/identity.h made WITHOUT an IPSW (placeholder; no Apple data, not for Darwin)
+xnuloader/build.sh
+-rwx------ 1 agent agent 66048 Nov  7 15:13 loader.efi
+make[1]: Leaving directory '/workspace/Zeus-DualBoot/build/upstream/HakiOS'
+{
+  "artifact": "build/upstream/HakiOS/xnuloader/loader.efi",
+  "bytes": 66048,
+  "sha256": "75fe9d47c56f88d0af91ebd780c08d85dcd785bd3cee7e6c2fc6956d6c1b1846",
+  "status": "BUILD_VERIFIED",
+  "executed": false,
+  "zeus_compatible": "UNKNOWN",
+  "warning": "Research loader contains board-specific addresses and storage writes. Not a zeus boot image."
+}

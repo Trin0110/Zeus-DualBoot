@@ -1,0 +1,31 @@
+{
+  "status": "SOURCE_REFERENCE_ONLY",
+  "source": "https://github.com/torvalds/linux/blob/v6.12/arch/arm64/boot/dts/qcom/sm8450.dtsi",
+  "source_sha256": "c3c3d897c55aa581045dcee4d5e65eae662e37826434ac63162598051197166a",
+  "warning": "SoC reference facts only; not observed device mappings or permission to access MMIO. No runtime component consumes this file.",
+  "gic": {
+    "distributor_base": "0x17100000",
+    "distributor_size": "0x10000",
+    "redistributor_base": "0x17180000",
+    "redistributor_size": "0x200000",
+    "redistributor_stride": "0x40000"
+  },
+  "timer": {
+    "clock_hz": 19200000,
+    "ppi": [
+      13,
+      14,
+      11,
+      10
+    ]
+  },
+  "ufs": {
+    "base": "0x01d84000",
+    "size": "0x3000",
+    "spi": 265
+  },
+  "gcc": {
+    "base": "0x00100000",
+    "size": "0x1f4200"
+  }
+}
